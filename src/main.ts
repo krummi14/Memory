@@ -3,12 +3,12 @@ import './styles/style.scss';
 
 init();
 
-function init () {
+function init() {
     const fieldRef = document.getElementById('field');
     if (fieldRef) {
         fieldRef.addEventListener('click', e => {
             const card = (e.target as HTMLElement).closest('.card') as HTMLButtonElement;
-            if(card) {
+            if (card) {
                 card.classList.toggle('is_flipped');
             }
         })

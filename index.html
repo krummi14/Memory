@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory</title>
+    <title>Ready for Memory?</title>
 </head>
-<body class="index_body" >
-    <h1 id="h1_memory">Memory</h1>
-    <section id="field">
-        <button class="card">
-            <div class="card__inner">
-                <div class="card__face"></div>
-                <div class="card__face card__face--back"></div>
+
+<body class="index_body">
+
+    <section class="start_screen">
+        <div class="start_screen__content">
+            <div>
+                <p class="start_screen__p">It's play time</p>
+                <h1 class="start_screen__title">Ready to play?</h1>
             </div>
-        </button>
+            <button id="startGameBtn" class="start_game_btn" onclick="window.location.href='./pages/settings.html'">
+                <img src="./assets/icons/stadia_controller_icon.svg" alt="Black Game Controller">
+                <span class="btn_label">Play</span>
+                <span class="arrow_label">&rarr;</span>
+            </button>
+        </div>
+
+        <img src="./assets/img/stadia_controller.svg" alt="Game Controller" class="start_screen__img">
     </section>
+
     <script type="module" src="/src/main.ts"></script>
+
 </body>
+
 </html>

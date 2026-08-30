@@ -1,0 +1,52 @@
+@use '../abstract/mixin.scss' as mix;
+
+button {
+    font-family: 'Red Rose', serif;
+    cursor: pointer;
+}
+
+.start_game_btn {
+    @include mix.flexbox;
+    flex-direction: row;
+    width: 240px;
+    height: 80px;
+    font-size: 40px;
+    font-weight: 700;
+    background-color: rgba(240, 234, 110, 1);
+    color: rgba(48, 49, 49, 1);
+    border: none;
+    padding: 16px 32px;
+    gap: 24px;
+    transition: transform 200ms ease;
+}
+
+.start_game_btn[hidden] {
+    display: none;
+}
+
+.start_game_btn:hover {
+    transform: scale(1.08);
+}
+
+.btn_label {
+    display: inline-block;
+    transition: transform 500ms ease;
+}
+
+.start_game_btn:hover .btn_labell {
+    transform: scale(1.08);
+}
+
+.arrow_label {
+    font-size: 40px;
+}
+
+.start_game_btn img {
+    transform: rotate(0deg) scale(1);
+    transform-origin: center;
+    transition: transform 200ms ease;
+}
+
+.start_game_btn:hover img {
+    transform: rotate(-24deg) scale(1.16);
+}

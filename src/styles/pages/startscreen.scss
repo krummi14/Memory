@@ -1,0 +1,30 @@
+@use '../abstract/mixin.scss' as mix;
+
+.index_body {
+    @include mix.flexbox;
+    height: 100vh;
+    background-color: rgba(48, 49, 49, 1);
+    overflow: hidden;
+}
+
+.start_screen {
+    &__content {
+        @include mix.flexbox;
+        gap: 104px;
+    }
+
+    &__p {
+        margin: 0;
+        font-size: 48px;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    &__img {
+        position: absolute;
+        height: 304px;
+        width: 416px;
+        top: 77%;
+        left: 146px;
+        transform: translate(-50%, -50%);
+    }
+}

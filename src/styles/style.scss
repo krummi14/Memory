@@ -1,35 +1,15 @@
+@use './assets/button.scss';
+@use './pages/startscreen.scss';
+
 body {
-    height: 100vh;
-    background-color: yellow;
+    margin: 0;
+    font-family: 'Red Rose', serif;
+    font-weight: 400;
 }
 
-.card {
-    height: 100px;
-    aspect-ratio: 1/1;
-    background-color: transparent;
-    border: none;
-
-    &__inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        transition: all 300ms ease-in-out;
-    }
-
-    &__face {
-        position: absolute;
-        inset: 0;
-        background-color: black;
-        backface-visibility: hidden;
-
-        &--back {
-            transform: rotateY(180deg);
-            background-color: red;
-        }
-    }
-
-    &.is_flipped .card__inner {
-        transform: rotateY(180deg);
-    }
+h1 {
+    font-size: 136px;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+    font-weight: 700;
 }
