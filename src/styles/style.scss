@@ -1,5 +1,7 @@
+@use './assets/fonts.scss';
 @use './assets/button.scss';
 @use './pages/startscreen.scss';
+@use './pages/settings.scss';
 
 body {
     margin: 0;
@@ -10,6 +12,18 @@ body {
 h1 {
     font-size: 136px;
     color: rgba(255, 255, 255, 1);
-    margin: 0;
     font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    font-size: 54px;
+    font-weight: 700;
+    margin: 0;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
 }

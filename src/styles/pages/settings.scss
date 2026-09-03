@@ -1,0 +1,211 @@
+@use '/src/styles/abstract/mixin.scss' as mix;
+@use '/src/styles/abstract/variables.scss' as var;
+@import '/src/styles/assets/button.scss';
+
+.settings {
+    @include mix.flexbox;
+    height: 100vh;
+    padding: 0 160px;
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: 0 auto;
+    color: rgba(48, 49, 49, 1);
+
+    &_content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &_main {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &_options {
+        @include mix.flexbox;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%
+    }
+
+    &_summary {
+        @include mix.flexbox;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: end;
+        gap: clamp(24px, 5vh, 80px);
+    }
+}
+
+.settings_underline {
+    display: flex;
+    align-items: center;
+
+    &_square {
+        width: 16px;
+        height: 16px;
+        rotate: 45deg;
+        margin-left: -24px;
+        background-color: var.$secondary_yellow;
+    }
+
+    &_line {
+        width: 251px;
+        height: 4px;
+        background-color: var.$secondary_yellow;
+    }
+}
+
+.game_mode,
+.choose_player,
+.board_size {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+
+    &_header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+.button_selection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.theme_button,
+.choose_player_button,
+.board_size_button {
+    background-color: transparent;
+    text-align: left;
+    padding-left: 42px;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 16px;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+}
+
+.theme_button:hover,
+.choose_player_button:hover,
+.board_size_button:hover {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.theme_button.is-selected,
+.choose_player_button.is-selected,
+.board_size_button.is-selected {
+    font-weight: 700;
+}
+
+.theme_button .underline,
+.choose_player_button .underline,
+.board_size_button .underline {
+    rotate: 180deg;
+}
+
+.theme_button .underline,
+.choose_player_button .underline,
+.board_size_button .underline {
+
+    &_line {
+        width: 41px;
+        height: 3px;
+    }
+
+    &_square {
+        width: 12px;
+        height: 12px;
+        margin-left: -6px;
+    }
+
+}
+
+.settings_feedback {
+    @include mix.flexbox;
+    width: 440px;
+    height: 400px;
+    text-align: center;
+    background-color: #0ca2a215;
+    border-radius: 4%;
+
+    &_image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.start_game {
+    @include mix.flexbox;
+    flex-direction: row;
+    width: 600px;
+    box-sizing: border-box;
+    padding: 0 32px;
+    height: 80px;
+    background-color: #f6f6f6;
+    color: grey;
+    font-size: 20px;
+    justify-content: space-between;
+    gap: 16px;
+
+    &_slash {
+        width: 4px;
+        height: 56px;
+        transform: rotate(19.33deg);
+        background-color: grey;
+    }
+
+    &_feedback {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        white-space: nowrap;
+    }
+}
+
+.start_game .underline {
+    width: 4px;
+    height: 56px;
+    justify-content: center;
+    transform: rotate(289.33deg);
+
+    &_line {
+        width: 47px;
+        height: 4px;
+        flex-shrink: 0;
+    }
+
+    &_square {
+        width: 12px;
+        height: 12px;
+        margin-left: -6px;
+        flex-shrink: 0;
+    }
+}
+
+.startGameButton {
+    margin: 0 !important;
+    width: 126px !important;
+    height: 53px !important;
+    font-size: 20px !important;
+}
+
+.startGameButton:hover img {
+    transform: rotate(-5.33deg) scale(1.12) !important;
+}

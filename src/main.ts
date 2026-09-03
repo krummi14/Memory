@@ -1,6 +1,17 @@
 import './styles/style.scss';
-//document.getElementById('h1_memory')!.innerText = "first thread";
 
+/** Initializes the page-specific UI and game behavior for the current route. */
+if (document.body.classList.contains('settings')) void initSettingsPage();
+
+/** Loads and initializes the settings-page modules. */
+async function initSettingsPage(): Promise<void> {
+    const { renderCustomUnderline, initSettingsButtons, initSettingsSection } = await import('./ts/pages/settings');
+    renderCustomUnderline();
+    initSettingsSection();
+    initSettingsButtons();
+}
+
+/*
 init();
 
 function init() {
@@ -13,4 +24,4 @@ function init() {
             }
         })
     }
-}
+}*/

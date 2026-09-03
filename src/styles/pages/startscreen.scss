@@ -21,10 +21,9 @@
 
     &__img {
         position: absolute;
-        height: 304px;
-        width: 416px;
-        top: 77%;
-        left: 146px;
-        transform: translate(-50%, -50%);
+        width: clamp(200px, 29vw, 320px);
+        height: auto;
+        left: -60px;
+        bottom: 5px;
     }
 }

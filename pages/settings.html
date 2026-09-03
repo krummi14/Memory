@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Settings</title>
+</head>
+
+<body class="settings">
+
+    <div class="settings_content">
+
+        <header class="settings_header">
+            <h2>Settings</h2>
+            <template custom-underline></template>
+        </header>
+
+        <main class="settings_main">
+            <section class="settings_options">
+                <template choose-theme-section></template>
+                <template choose-player-section></template>
+                <template choose-board-size-section></template>
+            </section>
+
+            <aside class="settings_summary">
+                <template selected-theme-section></template>
+                <template start-game-section></template>
+            </aside>
+        </main>
+
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
