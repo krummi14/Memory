@@ -31,7 +31,7 @@
         @include mix.flexbox;
         justify-content: space-between;
         align-items: flex-start;
-        height: 100%
+        height: 100%;
     }
 
     &_summary {
@@ -43,7 +43,7 @@
     }
 }
 
-.settings_underline {
+.underline {
     display: flex;
     align-items: center;
 
@@ -98,6 +98,7 @@
     font-weight: 400;
     font-size: 20px;
     border: none;
+    font-family: 'Almarai', serif;
 }
 
 .theme_button:hover,
@@ -154,7 +155,7 @@
 .start_game {
     @include mix.flexbox;
     flex-direction: row;
-    width: 600px;
+    width: 720px;
     box-sizing: border-box;
     padding: 0 32px;
     height: 80px;
@@ -163,12 +164,18 @@
     font-size: 20px;
     justify-content: space-between;
     gap: 16px;
+    font-family: 'Almarai', serif;
 
     &_slash {
         width: 4px;
         height: 56px;
         transform: rotate(19.33deg);
         background-color: grey;
+
+        &.is_active {
+            width: 6px;
+            background-color: var.$secondary_yellow;
+        }
     }
 
     &_feedback {
@@ -200,12 +207,19 @@
 }
 
 .startGameButton {
-    margin: 0 !important;
-    width: 126px !important;
-    height: 53px !important;
-    font-size: 20px !important;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    img {
+        display: block;
+        width: 126px;
+        height: 53px;
+    }
 }
 
 .startGameButton:hover img {
-    transform: rotate(-5.33deg) scale(1.12) !important;
+    transform: rotate(-5.33deg) scale(1.12);
 }
