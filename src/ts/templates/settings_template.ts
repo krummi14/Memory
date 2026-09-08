@@ -12,7 +12,7 @@ export function getSelectionUnderlineTemplate(): string {
  * Returns the markup for the game theme selection section on the settings page.
  * @returns The HTML string for the game theme section.
  */
-export function getThemeSectionTemplate(): string {
+export function getThemeTemplate(): string {
   return `
       <section class="game_mode">
         <header class="game_mode_header">
@@ -22,12 +22,12 @@ export function getThemeSectionTemplate(): string {
 
         <div class="button_selection">
           <button class="theme_button" id="code_vibes_theme" data-label="Code vibes theme">
-            <img src="../assets/icons/fiber_manual_record.svg" alt="Off Icon">
+            <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             Code vibes theme
           </button>
-          <button class="theme_button" id="gaming_theme" data-label="Gaming theme">
-            <img src="../assets/icons/fiber_manual_record.svg" alt="Off Icon">
-            Gaming theme
+          <button class="theme_button" id="foods_theme" data-label="Food theme">
+            <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
+            Foods theme
           </button>
         </div>
 
@@ -39,7 +39,7 @@ export function getThemeSectionTemplate(): string {
  * Returns the markup for the player selection section on the settings page.
  * @returns The HTML string for the choose player section.
  */
-export function getChoosePlayerSectionTemplate(): string {
+export function getChoosePlayerTemplate(): string {
   return `
       <section class="choose_player">
         <header class="choose_player_header">
@@ -49,11 +49,11 @@ export function getChoosePlayerSectionTemplate(): string {
 
         <div class="button_selection">
           <button class="choose_player_button" id="playerBlue" data-label="blue">
-            <img src="../assets/icons/fiber_manual_record.svg" alt="Off Icon">
+            <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             Blue
           </button>
           <button class="choose_player_button" id="playerOrange" data-label="orange">
-            <img src="../assets/icons/fiber_manual_record.svg" alt="Off Icon">
+            <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             Orange
           </button>
         </div>
@@ -66,7 +66,7 @@ export function getChoosePlayerSectionTemplate(): string {
  * Returns the markup for the board size selection section on the settings page.
  * @returns The HTML string for the board size section.
  */
-export function getBoardSizeSectionTemplate(): string {
+export function getBoardSizeTemplate(): string {
   return `
       <section class="board_size">
         <header class="board_size_header">
@@ -76,15 +76,15 @@ export function getBoardSizeSectionTemplate(): string {
 
         <div class="button_selection">
           <button class="board_size_button" id="board_4x4" data-label="4x4">
-            <img src="../assets/icons/fiber_manual_record.svg" alt="Off Icon">
+            <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             16 cards
           </button>
           <button class="board_size_button" id="board_4x6" data-label="6x4">
-            <img src="../assets/icons/fiber_manual_record.svg" alt="Off Icon">
+            <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             24 cards
           </button>
           <button class="board_size_button" id="board_6x6" data-label="6x6">
-            <img src="../assets/icons/fiber_manual_record.svg" alt="Off Icon">
+            <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             36 cards
           </button>
         </div>
@@ -97,7 +97,7 @@ export function getBoardSizeSectionTemplate(): string {
  * Returns the feedback markup shown until all required settings are selected.
  * @returns The HTML string for the settings feedback section.
  */
-export function getSelectedThemeSectionTemplate(): string {
+export function getSelectedThemeTemplate(): string {
   return `
       <section class="settings_feedback" id="settingsFeedback">
         <h3>Please <br>
@@ -113,7 +113,7 @@ export function getSelectedThemeSectionTemplate(): string {
  * Returns the selected-settings summary and start control markup.
  * @returns The HTML string for the start-game section.
  */
-export function getStartGameSectionTemplate(): string {
+export function getStartGameTemplate(): string {
   return `
       <section class="start_game">
 

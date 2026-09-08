@@ -99,6 +99,7 @@
     font-size: 20px;
     border: none;
     font-family: 'Almarai', serif;
+    height: 24px;
 }
 
 .theme_button:hover,
@@ -165,6 +166,11 @@
     justify-content: space-between;
     gap: 16px;
     font-family: 'Almarai', serif;
+
+    &_feedback {
+        @include mix.flexbox;
+        width: 168px;
+    }
 
     &_slash {
         width: 4px;

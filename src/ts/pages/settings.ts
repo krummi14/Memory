@@ -1,9 +1,9 @@
-import { getSelectionUnderlineTemplate, getSelectedThemeSectionTemplate, getBoardSizeSectionTemplate, getChoosePlayerSectionTemplate, getThemeSectionTemplate, getStartGameSectionTemplate } from '../templates/settings_template';
+import { getSelectionUnderlineTemplate, getSelectedThemeTemplate, getBoardSizeTemplate, getChoosePlayerTemplate, getThemeTemplate, getStartGameTemplate } from '../templates/settings_template';
 
 /** Maps theme button ids to the feedback icon shown once selected. */
 const THEME_ICONS: Record<string, string> = {
     code_vibes_theme: '../assets/img/it_theme.svg',
-    gaming_theme: '../assets/img/foods_theme.svg',
+    foods_theme: '../assets/img/foods_theme.svg',
 };
 
 /** Tracks which settings groups have a selection so far. */
@@ -18,43 +18,21 @@ const feedback = document.getElementById('settingsFeedback');
 const startGameButton = document.getElementById('startGameButton');
 
 /**
- * Replaces the underline placeholder with its rendered markup,
- * if the placeholder exists on the page.
- */
-export function renderSelectionUnderline(): void {
-    const refUnderline = document.querySelector<HTMLElement>('[selection-underline]');
-    if (refUnderline) {
-        refUnderline.outerHTML = getSelectionUnderlineTemplate();
-    }
-}
-
-/**
  * Renders the settings sections if their placeholders exist on the page.
  */
-export function initSettingsSection(): void {
-    renderSection('[choose-theme-section]', getThemeSectionTemplate);
-    renderSection('[choose-player-section]', getChoosePlayerSectionTemplate);
-    renderSection('[choose-board-size-section]', getBoardSizeSectionTemplate);
-    renderSection('[selected-theme-section]', getSelectedThemeSectionTemplate);
-    renderSection('[start-game-section]', getStartGameSectionTemplate);
-}
-
-/**
- * Replaces a section placeholder with its rendered template markup, if the
- * placeholder exists on the page.
- * @param selector The CSS selector matching the placeholder element.
- * @param template A function returning the markup to render in its place.
- */
-function renderSection(selector: string, template: () => string): void {
-    const section = document.querySelector<HTMLElement>(selector);
-    if (section) section.outerHTML = template();
+export function initSettingSections(): void {
+    renderSection('[choose-theme]', getThemeTemplate);
+    renderSection('[choose-player]', getChoosePlayerTemplate);
+    renderSection('[choose-board-size]', getBoardSizeTemplate);
+    renderSection('[selected-theme]', getSelectedThemeTemplate);
+    renderSection('[start-game]', getStartGameTemplate);
 }
 
 /**
  * Registers click handlers for the theme, player, and board size toggle
  * buttons on the settings page.
  */
-export function initSettingsButtons(): void {
+export function initSettingButtons(): void {
     initButtonGroup('.theme_button', showThemeFeedback);
     initThemePreview();
     initButtonGroup('.choose_player_button', showSelectedPlayer);
@@ -74,11 +52,6 @@ function initHoverUnderline(selector: string): void {
     });
 }
 
-/** Removes a preview underline unless the button remains selected. */
-function removeHoverUnderline(button: HTMLButtonElement): void {
-    if (!button.classList.contains('is-selected')) button.querySelector('.underline')?.remove();
-}
-
 /** Previews theme artwork while a theme button is hovered or focused. */
 function initThemePreview(): void {
     const initialContent = feedback?.innerHTML;
@@ -88,6 +61,33 @@ function initThemePreview(): void {
         button.addEventListener('mouseleave', () => hideThemePreview(button, initialContent));
         button.addEventListener('blur', () => hideThemePreview(button, initialContent));
     });
+}
+
+/**
+ * Replaces the underline placeholder with its rendered markup,
+ * if the placeholder exists on the page.
+ */
+export function renderSelectionUnderline(): void {
+    const refUnderline = document.querySelector<HTMLElement>('[selection-underline]');
+    if (refUnderline) {
+        refUnderline.outerHTML = getSelectionUnderlineTemplate();
+    }
+}
+
+/**
+ * Replaces a section placeholder with its rendered template markup, if the
+ * placeholder exists on the page.
+ * @param selector The CSS selector matching the placeholder element.
+ * @param template A function returning the markup to render in its place.
+ */
+function renderSection(selector: string, template: () => string): void {
+    const section = document.querySelector<HTMLElement>(selector);
+    if (section) section.outerHTML = template();
+}
+
+/** Removes a preview underline unless the button remains selected. */
+function removeHoverUnderline(button: HTMLButtonElement): void {
+    if (!button.classList.contains('is-selected')) button.querySelector('.underline')?.remove();
 }
 
 /** Shows a theme's artwork and underline while it is previewed. */
