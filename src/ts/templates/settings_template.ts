@@ -25,7 +25,7 @@ export function getThemeTemplate(): string {
             <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             Code vibes theme
           </button>
-          <button class="theme_button" id="foods_theme" data-label="Food theme">
+          <button class="theme_button" id="foods_theme" data-label="Foods theme">
             <img src="../assets/icons/fiber_manual_record.svg" alt="Button off Icon">
             Foods theme
           </button>

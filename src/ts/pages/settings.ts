@@ -15,7 +15,6 @@ const selectionState = {
 
 /** Const-variables */
 const feedback = document.getElementById('settingsFeedback');
-const startGameButton = document.getElementById('startGameButton');
 
 /**
  * Renders the settings sections if their placeholders exist on the page.
@@ -123,6 +122,7 @@ function restoreThemePreview(initialContent: string | undefined): void {
  * to the memory game page.
  */
 function initStartGameButton(): void {
+    const startGameButton = document.getElementById('startGameButton');
     startGameButton?.addEventListener('click', () => {
         window.location.href = './memory.html';
     });

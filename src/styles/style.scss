@@ -2,6 +2,9 @@
 @use './assets/button.scss';
 @use './pages/startscreen.scss';
 @use './pages/settings.scss';
+@use './pages/memory.scss';
+@use './themes/coding_vibes.scss';
+@use './themes/foods.scss';
 
 body {
     margin: 0;
@@ -25,6 +28,12 @@ h2 {
 h3 {
     font-family: 'Almarai', serif;
     font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+h4 {
+    font-size: 32px;
     font-weight: 700;
     margin: 0;
 }

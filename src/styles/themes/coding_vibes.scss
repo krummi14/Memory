@@ -1,0 +1,23 @@
+@use '../abstract/variables.scss' as var;
+
+.is_coding_theme {
+    background-color: var.$primary_dark;
+
+    .score_board {
+        background-color: #415652;
+    }
+
+    .exit_button {
+        &:hover {
+            border-color: #4dd5bc;
+            box-shadow: none;
+        }
+    }
+}
+
+.is_coding_theme .card.is-matched .card__face--back {
+    --matched-border-color: #4dd5bc;
+    --matched-box-shadow: 8px 8px 8px 0px #4dd5bc4d;
+    border: 5px solid var(--matched-border-color);
+    box-shadow: var(--matched-box-shadow);
+}

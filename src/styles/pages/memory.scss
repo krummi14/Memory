@@ -1,0 +1,236 @@
+.memory_game {
+  &_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 1);
+    height: 100vh;
+    padding: 16px 112px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &_board {
+    width: 100%;
+    max-width: 1040px;
+  }
+}
+
+#field {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+}
+
+.current_player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+  margin-right: 70px;
+
+  img {
+    width: 32px;
+    height: 24px;
+  }
+}
+
+.score_board {
+  display: flex;
+  gap: 16px;
+  padding: 16px 24px;
+  background-color: rgba(134, 233, 214, 0.2);
+}
+
+.blue_player {
+  color: rgba(43, 177, 255, 1);
+}
+
+.orange_player {
+  color: rgba(245, 142, 57, 1);
+}
+
+.blue_player,
+.orange_player {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card {
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  &__inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotateY(180deg);
+      background-image: none;
+      background-color: #ffffff;
+    }
+  }
+
+  &__image {
+    display: block;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  &.is-flipped .card__inner {
+    transform: rotateY(180deg);
+  }
+
+  &.is-matched .card__face--back {
+    animation: matched-border-blink 1500ms steps(1, end);
+  }
+}
+
+@keyframes matched-border-blink {
+
+  0%,
+  24%,
+  50%,
+  74%,
+  100% {
+    border-color: var(--matched-border-color);
+    box-shadow: var(--matched-box-shadow);
+  }
+
+  25%,
+  49%,
+  75%,
+  99% {
+    border-color: transparent;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.is-matched .card__face--back {
+    animation: none;
+  }
+}
+
+#field {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  padding: 24px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.quit_dialog {
+  width: min(100%, 380px);
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #303131;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.quit_dialog__title {
+  margin: 0 0 20px;
+  font-size: 32px;
+}
+
+.quit_dialog__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.quit_dialog__button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quit_dialog__button--secondary {
+  background-color: #415652;
+  color: #ffffff;
+}
+
+.quit_dialog__button--primary {
+  background-color: #4dd5bc;
+  color: #303131;
+}
+
+#quitGameModal {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  width: 520px;
+  height: 240px;
+  gap: 54px;
+
+  &[open] {
+    display: flex;
+  }
+
+  &_backToGame_button {
+    border: none;
+    background-color: rgba(102, 207, 188, 1);
+    color: rgba(255, 255, 255, 1)
+  }
+
+  &_exitGame_button {
+    border: 3px solid rgba(77, 213, 188, 1);
+    background-color: rgba(134, 233, 214, 0.14);
+    color: rgba(77, 213, 188, 1);
+  }
+}

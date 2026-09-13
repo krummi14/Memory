@@ -1,0 +1,211 @@
+.is_food_theme {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.is_food_theme .exit_button {
+    position: relative;
+    font-family: 'DeliusUnicase', serif;
+    color: rgba(243, 131, 45, 1);
+    background-color: rgba(255, 249, 242, 1);
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 12px;
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: rgba(243, 131, 45, 1);
+        color: rgba(255, 249, 242, 1);
+    }
+
+    .exit_icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .exit_icon--white {
+        display: none;
+    }
+
+    &:hover {
+        .exit_icon--orange {
+            display: none;
+        }
+
+        .exit_icon--white {
+            display: block;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/public/assets/img/exit_border.svg") center / 100% 100% no-repeat;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.is_food_theme .memory_game_header {
+    background-color: rgba(240, 229, 217, 1);
+    padding: 24px 32px;
+    border-radius: 10px;
+}
+
+.is_food_theme .score_board {
+    font-family: 'DeliusUnicase', serif;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    gap: 40px;
+    padding: 8px 16px;
+}
+
+.is_food_theme .score_board #blueCodingLabel {
+    display: none;
+}
+
+.is_food_theme .score_board #orangeCodingLabel {
+    display: none;
+}
+
+.is_food_theme .score_board #bluePlayerImg {
+    width: 20px;
+}
+
+.is_food_theme .score_board #orangePlayerImg {
+    width: 20px;
+}
+
+.is_food_theme .score_board .blue_player .blue_player_score_counter {
+    color: rgba(9, 127, 197, 1);
+    font-size: 30px;
+}
+
+.is_food_theme .score_board .orange_player .orange_player_score_counter {
+    color: rgba(234, 105, 0, 1);
+    font-size: 30px;
+}
+
+.is_food_theme .current_player {
+    font-family: 'KleeOne', serif;
+    font-size: 32px;
+    color: rgba(164, 82, 18, 1);
+}
+
+.is_food_theme .current_player #currentPlayerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+}
+
+//.is_food_theme #winnerFeedback.is-visible {
+//    justify-content: center;
+//}
+
+//.is_food_theme #winnerFeedback {
+//    background-color: #294f60;
+//}
+
+.is_food_theme #quitGameModal {
+    font-family: 'KleeOne', sans-serif;
+    color: rgba(164, 82, 18, 1);
+    font-size: 28px;
+    border-radius: 20px;
+    background-color: rgba(246, 246, 246, 1);
+
+    & button {
+        font-family: 'DeliusUnicase', sans-serif;
+        border-radius: 10px;
+    }
+
+    & #quitGameModal_backToGame_button {
+        font-size: 16px;
+        position: relative;
+        background-color: rgba(255, 171, 62, 1);
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 1);
+        padding: 12px 16px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("/public/assets/img/back_to_border.svg") center / 100% 100% no-repeat;
+            pointer-events: none;
+            padding: 22px;
+            z-index: 1;
+        }
+
+        &:hover {
+            background-color: rgba(243, 131, 45, 1);
+        }
+    }
+
+    & #quitGameModal_exitGame_button {
+        font-size: 16px;
+        position: relative;
+        background-color: rgba(255, 249, 242, 1);
+        color: rgba(243, 131, 45, 1);
+        border: none;
+        padding: 8px 30px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("/public/assets/img/exit_border.svg") center / 100% 100% no-repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        &:hover {
+            color: rgba(255, 249, 242, 1);
+            background-color: rgba(243, 131, 45, 1);
+        }
+    }
+}
+
+.gaming_blue_player {
+    &_img {
+        width: 29px;
+        height: 24px;
+        background-image: url('../assets/icons/blue-gaming-label.svg');
+        background-size: cover;
+    }
+}
+
+.is_food_theme .card.is-matched .card__face--back {
+    width: 100%;
+    height: 100%;
+    --matched-border-color: rgba(243, 131, 45, 1);
+    position: relative;
+    border: none;
+}
+
+.is_food_theme .card.is-matched .card__face--back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: url("/public/assets/img/frond.svg") center / 100% 100% no-repeat;
+    animation: matched-border-blink 0.8s ease-in-out 3;
+}
+
+@keyframes matched-border-blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}

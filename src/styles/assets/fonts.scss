@@ -61,3 +61,19 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'DeliusUnicase';
+    src: url('/public/assets/fonts/DeliusUnicase-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KleeOne';
+    src: url('/public/assets/fonts/KleeOne-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}

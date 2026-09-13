@@ -1,9 +1,10 @@
 @use '../abstract/mixin.scss' as mix;
+@use '../abstract/variables.scss' as var;
 
 .index_body {
     @include mix.flexbox;
     height: 100vh;
-    background-color: rgba(48, 49, 49, 1);
+    background-color: var.$primary_dark;
     overflow: hidden;
 }
 
