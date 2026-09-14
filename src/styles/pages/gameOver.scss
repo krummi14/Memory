@@ -1,0 +1,59 @@
+    @use '../abstract/mixin.scss' as mix;
+    @use '../abstract/variables.scss' as var;
+
+    .game_over_page {
+        height: 100vh;
+        @include mix.flexbox;
+        background-color: var.$primary_dark;
+        text-align: center;
+
+        & h1 {
+            font-size: 160px;
+            font-weight: 700;
+            color: rgba(77, 213, 188, 1);
+            text-shadow: rgba(77, 213, 188, 0.5) -8px -2px 3px;
+        }
+
+        & p {
+            color: rgba(255, 255, 255, 1);
+            font-size: 26px;
+            font-weight: 400;
+        }
+
+        &.is_food_theme {
+            background-color: rgba(243, 131, 45, 1);
+            font-family: 'KleeOne', serif;
+
+            h1 {
+                font-size: 128px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 1);
+                text-shadow: none;
+            }
+
+            p {
+                font-size: 42px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 1);
+            }
+
+            .score_board {
+                background-color: rgba(255, 255, 255, 1);
+                border-radius: 0%;
+                padding: 16px 40px;
+            }
+        }
+    }
+
+    .game_over {
+        display: flex;
+        flex-direction: column;
+        gap: 128px;
+
+        .score_board {
+            width: fit-content;
+            padding: 16px 24px;
+            margin: 0 auto;
+            background-color: rgba(134, 233, 214, 0.2);
+        }
+    }
