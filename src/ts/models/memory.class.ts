@@ -84,7 +84,7 @@ class Memory {
     this.selectedCards.forEach((card) => card.matched());
     this.addPoint();
     this.finishingCurrentSelection();
-    if (this.isComplete()) window.location.href = './game-over.html';
+    if (this.isComplete()) window.location.href = '/pages/game-over.html';
   };
 
   /**

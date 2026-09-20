@@ -34,14 +34,16 @@ async function initMemoryGamePage(): Promise<void> {
 
 /** Loads and initializes the game-over modules. */
 async function initGameOverPage(): Promise<void> {
-    const [finalScore, dialogs, themeSelection, themeRenderer] = await Promise.all([
+    const [finalScore, dialogs, themeSelection, themeRenderer, winner] = await Promise.all([
         import('./ts/components/score_board'),
         import('./ts/components/dialog'),
         import('./ts/themes/theme'),
         import('./ts/themes/used_theme'),
+        import('./ts/components/winning_game'),
     ]);
     const scoreManager = new finalScore.ScoreManager();
     const { blueScore, orangeScore } = scoreManager.getScores();
     scoreManager.render({ blueScore, orangeScore });
+    winner.initWinnerGame({ blueScore, orangeScore });
     themeRenderer.applyTheme(themeSelection.getSelectedTheme());
 }

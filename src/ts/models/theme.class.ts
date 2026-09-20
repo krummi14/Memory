@@ -20,6 +20,9 @@ export class Theme {
   exitButtonIcon!: string;
   currentPlayerImages!: Record<PlayerColor, string>;
   currentPlayerBackgroundColors!: Record<PlayerColor, string>;
+  drawImage?: string;
+  drawColor?: string;
+  winnerColor?: string;
 
   /**
    * Returns the player-label image path for a specific player.

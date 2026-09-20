@@ -124,7 +124,7 @@ function restoreThemePreview(initialContent: string | undefined): void {
 function initStartGameButton(): void {
     const startGameButton = document.getElementById('startGameButton');
     startGameButton?.addEventListener('click', () => {
-        window.location.href = './memory.html';
+        window.location.href = '/pages/memory.html';
     });
 }
 

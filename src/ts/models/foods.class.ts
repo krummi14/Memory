@@ -33,6 +33,11 @@ export class FoodsTheme extends Theme {
 			blue: 'rgba(9, 127, 197, 1)',
 			orange: 'rgba(234, 105, 0, 1)',
 		};
+		this.winnerDialogBackButtonLabel = 'Home';
+		this.winnerImage = '../assets/img/blue_winner.svg';
+		this.drawImage = '../assets/img/draw_foods.svg';
+		this.drawColor = 'rgba(243, 131, 45, 1)';
+		this.winnerColor = 'rgba(164, 82, 18, 1)';
 	}
 }
 

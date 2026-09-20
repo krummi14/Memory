@@ -48,7 +48,7 @@ function executeAddEventListenerForButtons(triggerButton: HTMLButtonElement, bac
   backButton.addEventListener('click', () => closeQuitGameModal(dialog));
   exitButton.addEventListener('click', () => {
     closeQuitGameModal(dialog);
-    window.location.href = './settings-page.html';
+    window.location.href = '/pages/settings.html';
   });
 }
 
