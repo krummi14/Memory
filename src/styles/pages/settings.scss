@@ -158,10 +158,10 @@
     flex-direction: row;
     width: 720px;
     box-sizing: border-box;
-    padding: 0 32px;
+    padding: 0 16px;
     height: 80px;
-    background-color: #f6f6f6;
-    color: grey;
+    background-color: rgba(246, 246, 246, 1);
+    color: rgba(48, 49, 49, 1);
     font-size: 20px;
     justify-content: space-between;
     gap: 16px;
@@ -169,7 +169,7 @@
 
     &_feedback {
         @include mix.flexbox;
-        width: 168px;
+        width: 240px;
     }
 
     &_slash {
@@ -213,19 +213,39 @@
 }
 
 .startGameButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin: 0;
-    padding: 0;
+    padding: 14px 20px;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    background-color: rgb(240, 234, 110);
+    font-size: 20px;
+    font-weight: 700;
+
+    p {
+        color: rgba(48, 49, 49, 1);
+        margin: 0;
+    }
 
     img {
         display: block;
-        width: 126px;
-        height: 53px;
+        width: 24px;
     }
 }
 
+.startGameButton:hover {
+    transform: scale(1.12);
+}
+
+.startGameButton[hidden] {
+    display: none;
+}
+
 .startGameButton:hover img {
-    transform: rotate(-5.33deg) scale(1.12);
+    transform: rotate(-5.33deg);
 }

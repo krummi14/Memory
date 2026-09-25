@@ -8,7 +8,7 @@
     box-shadow: none;
     box-sizing: border-box;
     font-size: 16px;
-    padding: 12px;
+    padding: 9px;
 
     &:hover {
         transform: scale(1.05);
@@ -78,11 +78,13 @@
 .is_food_theme .score_board .blue_player .blue_player_score_counter {
     color: rgba(9, 127, 197, 1);
     font-size: 30px;
+    width: 32px;
 }
 
 .is_food_theme .score_board .orange_player .orange_player_score_counter {
     color: rgba(234, 105, 0, 1);
     font-size: 30px;
+    width: 32px;
 }
 
 .is_food_theme .current_player {
@@ -100,14 +102,6 @@
     width: 40px;
     border-radius: 8px;
 }
-
-//.is_food_theme #winnerFeedback.is-visible {
-//    justify-content: center;
-//}
-
-//.is_food_theme #winnerFeedback {
-//    background-color: #294f60;
-//}
 
 .is_food_theme #quitGameModal {
     font-family: 'KleeOne', sans-serif;

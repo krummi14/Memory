@@ -133,10 +133,10 @@ export function getStartGameTemplate(): string {
           <div id="selectedBoardSize">Board size</div>
         </div>
 
-        <img id="startDefaultIcon" src="../assets/icons/start_disabled.svg" alt="Start Disabled Img">
-
-        <button id="startGameButton" class="startGameButton" hidden>
-            <img src="../assets/icons/start_button.svg" alt="Start Game Img">
+        <img id="startDefaultItem" src="../assets/icons/start_disabled.svg" alt="Start Disabled">
+        <button id="startGameButton" class="startGameButton" disabled hidden>
+          <img src="../assets/icons/smart_display.svg" alt="Start Game">
+          <p>Start</p>
         </button>
 
       </section>
